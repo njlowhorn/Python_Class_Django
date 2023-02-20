@@ -1,19 +1,13 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Nolan's blog</title>
-    </head>
+{% extends 'blog/base.html' %}
 
-    <body>
-
-        <header>
-            <h1>Blog</h1>
-        </header>
-
-        <main>
-            <p>This is a page for the blog.</p> 
-        </main>
-        
-
-    </body>
-</html>
+{% block content %}
+    {% for post in posts %}
+        <article class="post">
+            <time class="date">
+                {{ post.published_date }}
+            </time>
+            <h2><a href="">{{ post.title }}</a></h2>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </article>
+    {% endfor %}
+{% endblock %}
