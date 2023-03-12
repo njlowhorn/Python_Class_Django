@@ -32,7 +32,7 @@ def desktop(request):
             with open("purchases.csv", "r") as fromFile:
                 reader = csv.reader(fromFile)
                 all_rows = [r for r in reader]
-                row = all_rows[-2]
+                row = all_rows[-1]
                 price = 300
                 price += int(row[2]) * 5 #ram
                 price += int(row[3]) / 5 #storage_hdd
@@ -71,7 +71,7 @@ def laptop(request):
             with open("purchases.csv", "r") as fromFile:
                 reader = csv.reader(fromFile)
                 all_rows = [r for r in reader]
-                row = all_rows[-2]
+                row = all_rows[-1]
                 price = 200
                 price += int(row[2]) * 5 #ram
                 price += int(row[3]) / 5 #storage_hdd
