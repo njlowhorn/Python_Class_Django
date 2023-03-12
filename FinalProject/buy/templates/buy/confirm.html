@@ -1,0 +1,28 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Confirm</title>
+        <link rel="stylesheet" href="{% static 'css/buy.css' %}"/>
+    </head>
+
+    <body>
+        <header>
+            <h1>The final total will be ${{ price }}.</h1>
+        </header>
+
+        <main>
+            <p>Would you like to confirm your purchase?</p>
+
+            <a href="{% url 'thanks' %}"><button >Confirm</button></a>
+            <a href="{% url 'buy' %}"><button >No</button></a>
+        </main>
+
+        <footer>
+            <br>
+            <br>
+            Copyright &copy; 2023
+        </footer>
+    </body>
+</html>

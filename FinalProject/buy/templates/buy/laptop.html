@@ -1,0 +1,109 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Order A Laptop</title>
+        <link rel="stylesheet" href="{% static 'css/buy.css' %}"/>
+        <script src="{% static 'javascript/buy.js' %}"></script>
+    </head>
+
+    <body>
+        <header>
+            <h1>Order A Laptop</h1>
+        </header>
+
+        <main>
+
+            <p>Customize and order a laptop.</p>
+
+            <form method="POST">
+                {% csrf_token %}
+
+                <input type="hidden" id="type" name="type" value="laptop">
+
+                <p>Choose a Manufacturer:
+                <select name="manufacturer" id="manufacturer">
+                    <option value="lenovo">Lenovo</option>
+                    <option value="hp">HP</option>
+                    <option value="dell">Dell</option>
+                    <option value="acer">Acer</option>
+                    <option value="asus">Asus</option>
+                    <option value="alienware">Alienware</option>
+                </select></p>
+
+                <p>Choose an Operating System:
+                <select name="operating_system" id="operating_system">
+                    <option value="windows">Windows</option>
+                    <option value="macos">macOS</option>
+                    <option value="linux">Linux</option>
+                </select></p>
+
+                <p>Choose RAM Amount:
+                <select name="ram" id="ram">
+                    <option value="4">4 GB</option>
+                    <option value="8">8 GB</option>
+                    <option value="16">16 GB</option>
+                    <option value="32">32 GB</option>
+                    <option value="64">64 GB</option>
+                </select></p>
+
+                <p>Choose HDD Storage Amount:
+                <select name="storage_hdd" id="storage_hdd">
+                    <option value="100">100 GB HDD</option>
+                    <option value="250">250 GB HDD</option>
+                    <option value="500">500 GB HDD</option>
+                    <option value="1000">1 TB HDD</option>
+                    <option value="2000">2 TB HDD</option>
+                </select></p>
+
+                <p>Choose SSD Storage Amount:
+                    <select name="storage_ssd" id="storage_ssd">
+                        <option value="0">0 GB SSD</option>
+                        <option value="100">100 GB SSD</option>
+                        <option value="250">250 GB SSD</option>
+                        <option value="500">500 GB SSD</option>
+                        <option value="1000">1 TB SSD</option>
+                        <option value="2000">2 TB SSD</option>
+                    </select></p>
+
+                <p>Choose a Battery Life:
+                    <select name="battery_life" id="battery_life">
+                        <option value="8">8 hours</option>
+                        <option value="10">10 hours</option>
+                        <option value="12">12 hours</option>
+                        <option value="14">14 hours</option>
+                    </select></p>
+
+                <p>Enter your contact information: </p>
+
+                <p>First Name: 
+                <input type="text" name="first_name" id="first_name" required></p>
+
+                <p>Last Name: 
+                <input type="text" name="last_name" id="last_name" required></p>
+
+                <p>Address: 
+                <input type="text" name="address" id="address" required></p>
+
+                <p>Email: 
+                <input type="email" name="email" id="email" required></p>
+
+                <p>Phone Number: 
+                    <input type="tel" name="phone_number" id="phone_number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" oninvalid="checkPhone()" oninput="inputPhone()" required></p>
+
+                <p>Debit/Credit Card Number: 
+                <input type="text" name="card_number" id="card_number" required></p>
+
+                <input type="submit" id="mySubmit"/>
+            </form>
+            
+        </main>
+
+        <footer>
+            <br>
+            <br>
+            Copyright &copy; 2023
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,39 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Order A Computer</title>
+        <link rel="stylesheet" href="{% static 'css/buy.css' %}"/>
+        <script src="{% static 'javascript/buy.js' %}"></script>
+    </head>
+
+    <body>
+        <header>
+            <h1>Choose a type of computer</h1>
+        </header>
+
+        <main>
+
+            <div id="buttons">
+                <a href="desktop"><button>Desktop</button></a>
+                <a href="laptop"><button>Laptop</button></a>
+            </div>
+
+            <br>
+            <br>
+            <br>
+            <button onclick="showHelp()">Help?</button>
+            <div id="help">
+                <p>To start this application, you must choose either a laptop or a desktop computer. On the next page, you will customize your choice with the options we offer and enter in your information. After you submit, the price of the computer will be given ,and you can either confirm or deny the purchase.</p>
+            </div>
+            
+        </main>
+
+        <footer>
+            <br>
+            <br>
+            Copyright &copy; 2023
+        </footer>
+    </body>
+</html>
