@@ -15,6 +15,8 @@
 
         <main>
 
+            <h3>{{ error }}</h3>
+
             <p>Customize and order a desktop computer.</p>
 
             <form method="POST">
@@ -67,32 +69,32 @@
                         <option value="2000">2 TB SSD</option>
                     </select></p>
 
-                <p>Include Monitor? 
+                <p>Include Monitor?
                 <input type="checkbox" name="has_monitor" id="has_monitor"></p>
 
                 <p>Enter your contact information: </p>
 
-                <p>First Name: 
+                <p>First Name:
                 <input type="text" name="first_name" id="first_name" required></p>
 
-                <p>Last Name: 
+                <p>Last Name:
                 <input type="text" name="last_name" id="last_name" required></p>
 
-                <p>Address: 
+                <p>Address:
                 <input type="text" name="address" id="address" required></p>
 
-                <p>Email: 
+                <p>Email:
                 <input type="email" name="email" id="email" required></p>
 
-                <p>Phone Number: 
+                <p>Phone Number:
                 <input type="tel" name="phone_number" id="phone_number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" oninvalid="checkPhone()" oninput="inputPhone()" required></p>
 
-                <p>Debit/Credit Card Number: 
+                <p>Debit/Credit Card Number:
                 <input type="text" name="card_number" id="card_number" required></p>
 
                 <input type="submit" id="mySubmit"/>
             </form>
-            
+
         </main>
 
         <footer>
