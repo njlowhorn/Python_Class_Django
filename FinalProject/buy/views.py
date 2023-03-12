@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from .models import Computer, Desktop, Laptop, Customer
 from .forms import DesktopForm, LaptopForm, CustomerForm
 import csv
 
@@ -42,8 +41,10 @@ def desktop(request):
                 fromFile.close()
             return render(request, "buy/confirm.html", {"price": format(price, ".2f")})
         else:
+            error = "Sorry, there was an error processing your form"
             form_desktop = DesktopForm()
-            form_customer = CustomerForm()
+            form_customer = CustomerForm
+            return render(request, "buy/desktop.html", {"error": error})
     return render(request, "buy/desktop.html")
 
 def laptop(request):
@@ -80,8 +81,10 @@ def laptop(request):
                 fromFile.close()
             return render(request, "buy/confirm.html", {"price": format(price, ".2f")})
         else:
+            error = "Sorry, there was an error processing your form"
             form_laptop = LaptopForm()
             form_customer = CustomerForm()
+            return render(request, "buy/laptop.html", {"error": error})
     return render(request, "buy/laptop.html")
 
 def thanks(request):
